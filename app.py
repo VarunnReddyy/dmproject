@@ -477,84 +477,117 @@ elif section == "Models Implemented":
     # rf_mse = mean_squared_error(y_test, rf_pred)
     # st.write(f'Random Forest Mean Squared Error: {rf_mse:.2f}')
     # """)
-elif section == "Conclusion":
-    st.header("Conclusion")
-    
-    # Collapsible section for Key Features and Contributions
-    with st.expander("Key Features"):
+elif section == "Conclusion & Results":
+    st.title("Conclusion & Results")
+
+    # Welcome Section
+    st.write("""
+    Welcome to the final section of our sea level and tidal prediction project. 
+    In this section, we provide an easy-to-understand summary of what we discovered, why these findings matter, 
+    and how they can be applied to solve real-world challenges. Our goal is to ensure that anyone, regardless of technical background, 
+    can appreciate the significance of our work.
+    """)
+
+    # Key Findings Section
+    with st.expander("Key Findings"):
+        st.subheader("What Did We Discover?")
         st.write("""
-        1. **Comprehensive Data Handling**:
-           - **Feature Engineering**: Includes extraction of temporal attributes (e.g., month, hour), scaling, and encoding for model readiness.
-           - **Missing Data Handling**: Effective imputation strategies ensure data quality and consistency for training.
+        Through our analysis and predictions, we uncovered several important insights about sea levels and tidal behavior:
+        
+        1. **Sea Levels Are Rising**:
+           - Over the past few decades, global sea levels have been steadily increasing. This is caused by factors like melting glaciers, polar ice caps, and the expansion of seawater as it warms.
+           - The data shows a clear upward trend, highlighting the urgent need for action to mitigate these changes and adapt to their impacts.
 
-        2. **Rich Visualizations**:
-           - The app offers intuitive visualizations, such as time series plots, scatter plots, and correlation heatmaps, to provide insights into tidal behaviors and model performance.
-           - Residual distribution plots and actual vs. predicted scatter plots demonstrate the reliability of the models.
+        2. **Tides Vary Seasonally**:
+           - Tidal patterns are not uniform; they change depending on the time of year and location.
+           - Some months experience unusually high or low tides, which can affect everything from coastal ecosystems to shipping and fishing activities.
 
-        3. **Multiple Models for Prediction**:
-           - The application implements various models to predict both **highest tidal levels** and **mean sea levels**:
-             - **Decision Tree Regressor**: Provides interpretability and simplicity, suitable for quick analysis.
-             - **Random Forest Regressor**: Excels in accuracy and feature importance insights, effectively handling complex relationships.
-             - **Hybrid Prophet + XGBoost**: Integrates time-series analysis and machine learning for superior accuracy, particularly in datasets with sequential dependencies.
-             - **LSTM Neural Network**: Captures long-term sequential dependencies, showcasing its strength in modeling complex temporal patterns.
-             - **TCN and Hybrid TCN-LSTM Models**: Used for mean sea level prediction, combining the strengths of convolutional and recurrent architectures for state-of-the-art accuracy.
+        3. **Extreme Water Levels Are Becoming More Common**:
+           - Higher-than-normal tides, often referred to as "king tides," are happening more frequently in many areas. These events pose a serious threat to coastal communities.
 
-        4. **Comparison and Evaluation**:
-           - Performance metrics like Mean Squared Error (MSE) and R² scores are compared across models.
-           - Visual aids, including bar charts and residual histograms, effectively communicate model strengths and limitations.
+        4. **Accurate Predictions Are Possible**:
+           - Using advanced methods, we successfully predicted both the highest tidal levels and long-term average sea levels. 
+           - These predictions provide valuable tools for planning and risk management in vulnerable areas.
         """)
 
-    # Collapsible section for Model Insights and Performance
-    with st.expander("Model Insights and Performance"):
+    # Importance of the Findings
+    with st.expander("Why These Findings Matter"):
+        st.subheader("Why Do These Insights Matter?")
         st.write("""
-        1. **Highest Tidal Level Prediction**:
-           - **Best Performing Model**: Random Forest Regressor with an R² score of 0.871 and MSE of 0.0336.
-           - **Key Features**:
-             - Temporal features (e.g., month, hour) and tidal metrics (e.g., MHHW) are identified as crucial predictors.
-             - Its ensemble approach balances accuracy and interpretability, making it ideal for real-world applications.
-           - **Hybrid Prophet + XGBoost**: Achieved the lowest MSE (0.0296) but required significant computational resources and tuning.
+        The information we’ve gathered is not just data—it’s a call to action. Here’s why it matters:
 
-        2. **Mean Sea Level Prediction**:
-           - **Hybrid TCN-LSTM**: Outperformed other models with an R² score of 0.9799 and MSE of 0.0042, highlighting its ability to capture both short-term fluctuations and long-term trends.
-           - **TCN Model**: Efficiently captured temporal patterns, achieving strong performance with a simpler architecture.
+        1. **Protecting Coastal Communities**:
+           - Rising sea levels and extreme tides put millions of people at risk. Flooding can destroy homes, businesses, and critical infrastructure.
+           - Our predictions can help communities prepare for these events, reducing damage and saving lives.
+
+        2. **Preserving Natural Ecosystems**:
+           - Wetlands, mangroves, and other coastal ecosystems are vital for biodiversity, water purification, and protecting against storm surges.
+           - Understanding sea level trends can help in preserving these habitats for future generations.
+
+        3. **Improving Infrastructure Planning**:
+           - Cities and towns near coastlines need to adapt. Building seawalls, elevating roads, and improving drainage systems are just a few ways our findings can guide smarter investments.
+
+        4. **Raising Awareness**:
+           - By showing clear evidence of sea level rise, we can help raise awareness about climate change and inspire meaningful action at both the individual and policy levels.
         """)
 
-    # Collapsible section for Strengths of the Application
-    with st.expander("Strengths of the Application"):
+    # Potential Use Cases Section
+    with st.expander("Potential Use Cases"):
+        st.subheader("How Can This Be Used?")
         st.write("""
-        - **Versatility**: The app integrates multiple approaches to address diverse aspects of tidal and sea level predictions.
-        - **Scalability**: Models like Random Forest and TCN can be scaled to handle larger datasets or more features.
-        - **Insightful Analysis**: Feature importance rankings and visualizations provide actionable insights for researchers and policymakers.
-        - **User-Friendliness**: Intuitive navigation and collapsible sections enhance user experience, making the app accessible to technical and non-technical users alike.
+        Our findings have practical applications across various sectors:
+
+        1. **Urban Planning**:
+           - Governments can use these predictions to design resilient cities. For example, planners can identify areas at high risk of flooding and take steps to protect them.
+
+        2. **Disaster Management**:
+           - Accurate tidal and sea level forecasts are essential for preparing for storms and hurricanes. 
+           - Emergency services can use this information to evacuate vulnerable areas and plan rescue efforts.
+
+        3. **Education and Research**:
+           - Schools, universities, and environmental organizations can use our findings to educate people about the impacts of climate change.
+
+        4. **Insurance and Real Estate**:
+           - Insurance companies can assess risks more accurately, and property buyers can make informed decisions about where to live or invest.
+
+        5. **Maritime Industry**:
+           - Shipping and fishing industries can benefit from understanding tidal patterns, reducing risks and improving efficiency.
         """)
 
-    # Collapsible section for Limitations
-    with st.expander("Limitations"):
+    # Future Improvements Section
+    with st.expander("What Can Be Improved?"):
+        st.subheader("What’s Next for This Project?")
         st.write("""
-        1. **Computational Requirements**:
-           - Models like LSTM and Hybrid Prophet + XGBoost are resource-intensive and may not be feasible for real-time predictions on limited hardware.
-        2. **Complexity**:
-           - The hybrid models require careful tuning and maintenance, which may pose challenges in deployment scenarios.
-        3. **Data Preprocessing Dependency**:
-           - Models like LSTM and TCN rely heavily on preprocessing, making them sensitive to data quality and format.
+        While this project has made significant strides, there is always room for improvement. Here are some ideas for the future:
+
+        1. **Real-Time Data**:
+           - Incorporating live data streams would allow for real-time predictions, making the tool even more useful during emergencies like storm surges.
+
+        2. **Global Expansion**:
+           - Currently, our focus has been on specific regions. Expanding the dataset to include more global locations would make the tool valuable for a wider audience.
+
+        3. **Scenario Analysis**:
+           - By simulating different climate scenarios (e.g., high emissions vs. low emissions), we can provide more detailed insights into potential future outcomes.
+
+        4. **Improved User Interface**:
+           - Adding more interactive features and visualizations would make the tool easier for non-experts to use and understand.
+
+        5. **Community Involvement**:
+           - Engaging local communities in data collection and feedback could enhance the accuracy and relevance of our predictions.
         """)
 
-    # Collapsible section for Conclusion Summary
-    with st.expander("Conclusion Summary"):
+    # Final Thoughts Section
+    with st.expander("Final Thoughts"):
+        st.subheader("Why This Project Matters")
         st.write("""
-        The Random Forest Regressor emerged as the most balanced model, providing a strong combination of accuracy, interpretability, and computational efficiency. It is particularly suitable for practical applications requiring both predictive accuracy and insights into feature importance.
+        This project is more than just a technical exercise—it’s about using data and technology to address one of the greatest challenges of our time: climate change.
 
-        The Hybrid Prophet + XGBoost model demonstrated exceptional accuracy in handling complex datasets with sequential dependencies, making it ideal for cases where maximum precision is necessary, despite higher computational demands.
+        - By understanding and predicting sea level changes, we can help protect communities, preserve ecosystems, and ensure a safer, more sustainable future.
+        - Our work serves as a reminder that science and innovation can be powerful tools for solving real-world problems.
 
-        The Hybrid TCN-LSTM stood out for its state-of-the-art performance in mean sea level predictions, excelling at both short-term and long-term temporal dependencies.
-
-        **Future Directions**:
-        - **Integration of Real-Time Data**: Incorporating live tidal data streams for dynamic predictions.
-        - **Enhanced Interpretability**: Adding SHAP or LIME-based explanations for complex models.
-        - **Optimization for Deployment**: Streamlining hybrid models for cloud-based or edge-based deployment.
-
-        This application represents a robust and versatile tool for analyzing and predicting sea level changes, with significant potential to support environmental decision-making and policy planning.
+        Thank you for exploring this project. Together, we can build a better, more resilient world.
         """)
+
 # Team Section
 elif section == "Team":
     st.header("Team Members")
