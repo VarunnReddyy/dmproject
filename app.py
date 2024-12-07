@@ -477,8 +477,8 @@ elif section == "Models Implemented":
     # rf_mse = mean_squared_error(y_test, rf_pred)
     # st.write(f'Random Forest Mean Squared Error: {rf_mse:.2f}')
     # """)
-elif section == "Conclusion & Results":
-    st.title("Conclusion & Results")
+elif section == "Conclusion":
+    st.title("Conclusion")
 
     # Welcome Section
     st.write("""
