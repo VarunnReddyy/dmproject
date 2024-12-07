@@ -481,7 +481,7 @@ elif section == "Conclusion":
     st.header("Conclusion")
     
     # Collapsible section for Key Features and Contributions
-    with st.expander("Key Features and Contributions"):
+    with st.expander("Key Features"):
         st.write("""
         1. **Comprehensive Data Handling**:
            - **Feature Engineering**: Includes extraction of temporal attributes (e.g., month, hour), scaling, and encoding for model readiness.
