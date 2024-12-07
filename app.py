@@ -477,7 +477,84 @@ elif section == "Models Implemented":
     # rf_mse = mean_squared_error(y_test, rf_pred)
     # st.write(f'Random Forest Mean Squared Error: {rf_mse:.2f}')
     # """)
+elif section == "Conclusion":
+    st.header("Conclusion")
+    
+    # Collapsible section for Key Features and Contributions
+    with st.expander("Key Features and Contributions"):
+        st.write("""
+        1. **Comprehensive Data Handling**:
+           - **Feature Engineering**: Includes extraction of temporal attributes (e.g., month, hour), scaling, and encoding for model readiness.
+           - **Missing Data Handling**: Effective imputation strategies ensure data quality and consistency for training.
 
+        2. **Rich Visualizations**:
+           - The app offers intuitive visualizations, such as time series plots, scatter plots, and correlation heatmaps, to provide insights into tidal behaviors and model performance.
+           - Residual distribution plots and actual vs. predicted scatter plots demonstrate the reliability of the models.
+
+        3. **Multiple Models for Prediction**:
+           - The application implements various models to predict both **highest tidal levels** and **mean sea levels**:
+             - **Decision Tree Regressor**: Provides interpretability and simplicity, suitable for quick analysis.
+             - **Random Forest Regressor**: Excels in accuracy and feature importance insights, effectively handling complex relationships.
+             - **Hybrid Prophet + XGBoost**: Integrates time-series analysis and machine learning for superior accuracy, particularly in datasets with sequential dependencies.
+             - **LSTM Neural Network**: Captures long-term sequential dependencies, showcasing its strength in modeling complex temporal patterns.
+             - **TCN and Hybrid TCN-LSTM Models**: Used for mean sea level prediction, combining the strengths of convolutional and recurrent architectures for state-of-the-art accuracy.
+
+        4. **Comparison and Evaluation**:
+           - Performance metrics like Mean Squared Error (MSE) and R² scores are compared across models.
+           - Visual aids, including bar charts and residual histograms, effectively communicate model strengths and limitations.
+        """)
+
+    # Collapsible section for Model Insights and Performance
+    with st.expander("Model Insights and Performance"):
+        st.write("""
+        1. **Highest Tidal Level Prediction**:
+           - **Best Performing Model**: Random Forest Regressor with an R² score of 0.871 and MSE of 0.0336.
+           - **Key Features**:
+             - Temporal features (e.g., month, hour) and tidal metrics (e.g., MHHW) are identified as crucial predictors.
+             - Its ensemble approach balances accuracy and interpretability, making it ideal for real-world applications.
+           - **Hybrid Prophet + XGBoost**: Achieved the lowest MSE (0.0296) but required significant computational resources and tuning.
+
+        2. **Mean Sea Level Prediction**:
+           - **Hybrid TCN-LSTM**: Outperformed other models with an R² score of 0.9799 and MSE of 0.0042, highlighting its ability to capture both short-term fluctuations and long-term trends.
+           - **TCN Model**: Efficiently captured temporal patterns, achieving strong performance with a simpler architecture.
+        """)
+
+    # Collapsible section for Strengths of the Application
+    with st.expander("Strengths of the Application"):
+        st.write("""
+        - **Versatility**: The app integrates multiple approaches to address diverse aspects of tidal and sea level predictions.
+        - **Scalability**: Models like Random Forest and TCN can be scaled to handle larger datasets or more features.
+        - **Insightful Analysis**: Feature importance rankings and visualizations provide actionable insights for researchers and policymakers.
+        - **User-Friendliness**: Intuitive navigation and collapsible sections enhance user experience, making the app accessible to technical and non-technical users alike.
+        """)
+
+    # Collapsible section for Limitations
+    with st.expander("Limitations"):
+        st.write("""
+        1. **Computational Requirements**:
+           - Models like LSTM and Hybrid Prophet + XGBoost are resource-intensive and may not be feasible for real-time predictions on limited hardware.
+        2. **Complexity**:
+           - The hybrid models require careful tuning and maintenance, which may pose challenges in deployment scenarios.
+        3. **Data Preprocessing Dependency**:
+           - Models like LSTM and TCN rely heavily on preprocessing, making them sensitive to data quality and format.
+        """)
+
+    # Collapsible section for Conclusion Summary
+    with st.expander("Conclusion Summary"):
+        st.write("""
+        The Random Forest Regressor emerged as the most balanced model, providing a strong combination of accuracy, interpretability, and computational efficiency. It is particularly suitable for practical applications requiring both predictive accuracy and insights into feature importance.
+
+        The Hybrid Prophet + XGBoost model demonstrated exceptional accuracy in handling complex datasets with sequential dependencies, making it ideal for cases where maximum precision is necessary, despite higher computational demands.
+
+        The Hybrid TCN-LSTM stood out for its state-of-the-art performance in mean sea level predictions, excelling at both short-term and long-term temporal dependencies.
+
+        **Future Directions**:
+        - **Integration of Real-Time Data**: Incorporating live tidal data streams for dynamic predictions.
+        - **Enhanced Interpretability**: Adding SHAP or LIME-based explanations for complex models.
+        - **Optimization for Deployment**: Streamlining hybrid models for cloud-based or edge-based deployment.
+
+        This application represents a robust and versatile tool for analyzing and predicting sea level changes, with significant potential to support environmental decision-making and policy planning.
+        """)
 # Team Section
 elif section == "Team":
     st.header("Team Members")
